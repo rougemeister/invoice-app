@@ -12,7 +12,7 @@ interface Address {
     total: number;
   }
   
-  interface Invoice {
+ export interface Invoice {
     id: string;
     createdAt: string;
     paymentDue: string;
