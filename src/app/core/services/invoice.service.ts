@@ -7,7 +7,7 @@ import { Invoice } from '../../features/components/invoice/models/invoice.model'
   providedIn: 'root'
 })
 export class InvoiceService {
-  private jsonUrl = 'assets/invoices.json'; // Adjust this path as needed
+  private jsonUrl = '../../assets/data/data.json'; 
 
   constructor(private http: HttpClient) { }
 
