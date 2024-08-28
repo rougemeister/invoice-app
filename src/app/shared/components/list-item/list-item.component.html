@@ -1,0 +1,33 @@
+<div class="item">
+    <div class="item-top">
+        <p class="item-id">
+            <span class="color-dark-gray">#</span>
+            <span class="bold">{{item.id}}</span></p>
+        <p class="item-name color-dark-gray">{{item.clientName}}</p>
+    </div>
+    <div class="item-bottom">
+        <div>
+            <p class="item-date color-dark-gray">Due {{ item.paymentDue | date:'dd MMM yyyy' }}</p>
+            <p class="item-price bold">{{item.total | currency: 'GBP'}}</p>
+        </div>
+        @if(item.status === 'pending'){
+        <div class="status pending">
+            <div class="round "></div>
+            <p class="bold">Pending</p>
+        </div>
+        }@else if (item.status === 'draft') {
+            <div class="status draft">
+                <div class="round"></div>
+                <p class="bold">Draft</p>
+            </div>
+
+        }@else if(item.status === 'paid') {
+            <div class="status paid">
+                <div class="round "></div>
+                <p class="bold">Paid</p>
+            </div>
+
+        }
+    
+    </div>
+</div>
