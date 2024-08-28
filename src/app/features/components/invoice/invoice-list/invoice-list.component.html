@@ -1,1 +1,8 @@
-<p>invoice-list works!</p>
+<div>
+    <app-nav-bar/>
+    <div class="items-container">
+        @for (invoice of invoices$ | async; track invoice.id) {
+            <app-list-item [item]="invoice"/>
+        }
+    </div>
+</div>
