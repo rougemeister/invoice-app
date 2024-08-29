@@ -1,0 +1,24 @@
+.add-button {
+    width: 90px;
+    height: 44px;
+    border: none;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--purple-deep);  
+    span {
+        color: white;
+        font-weight: 800;
+        margin-right: 4px;
+    }
+}
+
+svg {
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    padding: 11px;
+    border-radius: 50px;
+    margin-right: 6px;
+}
