@@ -8,17 +8,19 @@ import { Observable } from 'rxjs';
 import { Invoice } from '../models/invoice.model';
 import { AppState } from '../../../../state/app.state';
 import { Store } from '@ngrx/store';
+import { AddButtonComponent } from "../../../../shared/components/add-button/add-button.component";
+import { FilterComponent } from "../../../../shared/components/filter/filter.component";
 
 
 @Component({
   selector: 'app-invoice-list',
   standalone: true,
-  imports: [NavBarComponent,ListItemComponent, AsyncPipe],
+  imports: [NavBarComponent, ListItemComponent, AsyncPipe, AddButtonComponent, AddButtonComponent, FilterComponent],
   templateUrl: './invoice-list.component.html',
   styleUrl: './invoice-list.component.scss'
 })
 export class InvoiceListComponent {
-  invoices$: Observable<Invoice[]>;  // Observable to hold the list of invoices
+  invoices$: Observable<Invoice[]>; 
 
   constructor(private store: Store<AppState>) {
     this.invoices$ = this.store.select(selectAllInvoices);
@@ -26,7 +28,11 @@ export class InvoiceListComponent {
   
   ngOnInit(): void {
     this.store.dispatch(loadInvoices());
+    console.log(this.invoices$)
   }
+
+
+  
 
 
 }

@@ -1,7 +1,29 @@
+.container {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
 .items-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 24px;
-    gap: 16px;
+    gap: 12px;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    width: 327px;
+    .toolbar-right {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+}
+
+.invoice {
+    margin-bottom: 3upx;
 }

@@ -1,8 +1,22 @@
 <div>
     <app-nav-bar/>
-    <div class="items-container">
-        @for (invoice of invoices$ | async; track invoice.id) {
-            <app-list-item [item]="invoice"/>
-        }
+    <div class="container">
+        <div class="toolbar">
+            <div>
+                <h3 class="invoice">Invoices</h3>
+                <p>{{(invoices$ | async)?.length}} Invoices</p>
+            </div>
+            <div class="toolbar-right">
+                <app-filter/>
+                <app-add-button/>
+            </div>
+         
+        </div>
+        <div class="items-container">
+            @for (invoice of invoices$ | async; track invoice.id) {
+                <app-list-item [item]="invoice"/>
+            }
+        </div>
     </div>
+   
 </div>
