@@ -25,12 +25,39 @@
 }
 
 .invoice {
-    margin-bottom: 3upx;
+    margin-bottom: 3px;
 }
+
+.empty-container {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.empty{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 217px;
+}
+
+.empty-text-top {
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+}
+
 
 @media screen and (min-width: 480px) {
     .toolbar {
         width: 672px;
+    }
+    .empty{
+        width: 242px;
+    }
+    .empty-container {
+        width: 100%;
+        height: 600px;
     }
 }
 

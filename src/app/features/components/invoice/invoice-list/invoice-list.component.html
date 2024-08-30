@@ -18,6 +18,20 @@
             @for (invoice of invoices$ | async; track invoice.id) {
                 <app-list-item [item]="invoice"/>
             }
+             @empty {
+
+            <div class="empty-container">
+                <div class="empty">
+                    <img src="../../../../../assets/images/illustration-empty.svg" alt="">
+                    <div>
+                        <p class="empty-text-top"><strong>There is nothing here</strong></p>
+                        <p>Create an invoice by clicking the <strong>New</strong>
+                            button and get started
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
         </div>
     </div>
 </div>
