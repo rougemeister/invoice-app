@@ -27,3 +27,26 @@
 .invoice {
     margin-bottom: 3upx;
 }
+
+@media screen and (min-width: 480px) {
+    .toolbar {
+        width: 672px;
+    }
+}
+
+@media screen and (min-width: 860px) {
+    .invoice-list {
+        display: flex;
+    }
+    .wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .toolbar {
+        width: 730px;
+    }
+
+}
