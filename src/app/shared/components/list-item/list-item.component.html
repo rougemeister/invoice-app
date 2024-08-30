@@ -1,33 +1,33 @@
 <div class="item">
-    <div class="item-top">
-        <p class="item-id">
-            <span class="color-dark-gray">#</span>
-            <span class="bold">{{item.id}}</span></p>
-        <p class="item-name color-dark-gray">{{item.clientName}}</p>
-    </div>
-    <div class="item-bottom">
-        <div>
+    <div class="first-child">
+        <div class="id-date-container">
+            <p class="item-id">
+                <span class="color-dark-gray">#</span>
+                <span class="bold">{{item.id}}</span></p>
             <p class="item-date color-dark-gray">Due {{ item.paymentDue | date:'dd MMM yyyy' }}</p>
-            <p class="item-price bold">{{item.total | currency: 'GBP'}}</p>
         </div>
+        <p class="item-name color-dark-gray">{{item.clientName}}</p>
+       
+    </div>
+    <div class="second-child">
+    <p class="item-price bold">{{item.total | currency: 'GBP'}}</p>
         @if(item.status === 'pending'){
         <div class="status pending">
             <div class="round "></div>
-            <p class="bold">Pending</p>
+            <p class="bold">{{item.status[0].toUpperCase()+ item.status.slice(1)}}</p>
         </div>
         }@else if (item.status === 'draft') {
             <div class="status draft">
                 <div class="round"></div>
-                <p class="bold">Draft</p>
+                <p class="bold">{{item.status[0].toUpperCase()+ item.status.slice(1)}}</p>
             </div>
 
         }@else if(item.status === 'paid') {
             <div class="status paid">
                 <div class="round "></div>
-                <p class="bold">Paid</p>
+                <p class="bold">{{item.status[0].toUpperCase()+ item.status.slice(1)}}</p>
             </div>
 
         }
-    
     </div>
 </div>
