@@ -39,7 +39,39 @@ p {
     width: 8px;
     height: 8px;
     border-radius: 10px;
-    background-color: black;
+}
+
+
+.status.pending {
+    background-color: #fff5e8;
+   
+    .round {
+        background-color: #FF8F00;
+    }
+    p {
+        color: #FF8F00;
+    }
+}
+
+.status.paid {
+    background-color: #e8fff7;
+    .round {
+        background-color: #33D69F;
+    }
+    p {
+        color: #33D69F;
+    }
+
+}
+
+.status.draft {
+    background-color: #ecefff;
+    .round {
+        background-color:  #373B53;
+    }
+    p {
+        color: #373B53;
+    }
 }
 
 .details-container {
@@ -124,5 +156,12 @@ p {
     display: flex;
     svg {
         fill: var(--purple-deep);
+    }
+}
+
+
+@media screen and (min-width: 480px) {
+    .details-page {
+        display: flex;
     }
 }

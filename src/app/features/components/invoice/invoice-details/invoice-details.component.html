@@ -1,4 +1,4 @@
-<div>
+<div class="details-page">
     <app-nav-bar/>
     <div class="main-wrapper">
     <div class="back ">
@@ -9,11 +9,24 @@
     </div>
     @if(invoice$ | async; as invoice){
     <div class="status-container">
-        <p>Status</p>
-        <div class="status draft">
-             <div class="round"></div>
-            <p class="bold">{{invoice.status}}</p>
-        </div>
+        <p>Status</p> @if(invoice.status === 'pending'){
+            <div class="status pending">
+                <div class="round "></div>
+                <p class="bold">{{invoice.status[0].toUpperCase()+ invoice.status.slice(1)}}</p>
+            </div>
+            }@else if (invoice.status === 'draft') {
+                <div class="status draft">
+                    <div class="round"></div>
+                    <p class="bold">{{invoice.status[0].toUpperCase()+ invoice.status.slice(1)}}</p>
+                </div>
+    
+            }@else if(invoice.status === 'paid') {
+                <div class="status paid">
+                    <div class="round "></div>
+                    <p class="bold">{{invoice.status[0].toUpperCase()+ invoice.status.slice(1)}}</p>
+                </div>
+    
+            }
     </div>
 
     <div class="details-container">
