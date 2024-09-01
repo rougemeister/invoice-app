@@ -159,6 +159,37 @@ p {
     }
 }
 
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    height: 91px;
+}
+
+button {
+    padding: 18px 22px;
+    border-radius: 50px;
+    border: none;
+    background-color: white;
+}
+
+.edit {
+    background-color: var(--edit-button-bg);
+    color: var(--light-blue);
+}
+
+.delete {
+    background-color: var(--red-deep);
+    color: white;
+}
+
+.read {
+    background-color: var(--purple-deep);
+    color: white;
+}
+
 
 @media screen and (min-width: 480px) {
     .details-page {
