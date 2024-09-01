@@ -7,77 +7,71 @@
             <p  class="dark bold">Go back</p>
         </div>
     </div>
+    @if(invoice$ | async; as invoice){
     <div class="status-container">
         <p>Status</p>
         <div class="status draft">
              <div class="round"></div>
-            <p class="bold">Pending</p>
+            <p class="bold">{{invoice.status}}</p>
         </div>
     </div>
 
     <div class="details-container">
         <div class="top">
             <div class="id">
-                <p class="large bold ">#<span class="dark ">XM9141</span></p>
-                <p>Graphic Design</p>
+                <p class="large bold ">#<span class="dark ">{{invoice.id}}</span></p>
+                <p>{{ invoice.description }}</p>
             </div>
             <div class="address">
-                <p>19 Union Terrace</p>
-                <p>London</p>
-                <p>E1 3EZ</p>
-                <p>United Kingdom</p>
+                <p>{{ invoice.senderAddress.street }}</p>
+                <p>{{ invoice.senderAddress.city }}</p>
+                <p>{{ invoice.senderAddress.postCode }}</p>
+                <p>{{ invoice.senderAddress.country }}</p>
             </div>
      </div>
      <div class="middle">
         <div class="date">
             <div class="invoice-date">
                 <p>Invoice Date</p>
-                <p class="bold dark larger">21 Aug 2021</p>
+                <p class="bold dark larger">{{invoice.createdAt | date: 'dd MMM yyyy' }}</p>
             </div>
             <div class="due-date">
                 <p>Payment Due</p>
-                <p class="bold dark larger">21 Sep 2021</p>
+                <p class="bold dark larger">{{invoice.paymentDue | date: 'dd MMM yyyy' }}</p>
             </div>
         </div>
         <div class="bill">
             <p>Bill To</p>
-            <p class="bold dark larger">Alex Grim</p>
-            <p>84 Church Way</p>
-            <p>Bradford</p>
-            <p>BDI 9PB</p>
-            <p>United Kingdom</p>
+            <p class="bold dark larger">{{invoice.clientName}}</p>
+            <p>{{ invoice.clientAddress.street }}</p>
+            <p>{{ invoice.clientAddress.city }}</p>
+            <p>{{ invoice.clientAddress.postCode }}</p>
+            <p>{{ invoice.clientAddress.country }}</p>
+
+            
         </div>
         <div class="email">
             <p>Sent to</p>
-            <p class="larger bold dark">alexgrim#mail.com</p>
+            <p class="larger bold dark">{{invoice.clientEmail}}</p>
         </div>
 
   
      </div>
      <div class="pricing">
         <div class="billing">
+            @for(item of invoice.items; track item){
             <div class="item">
+              
                 <div>
-                    <p class="item-name bold dark">
-                        Banner Design
+                    <p class="item-name bold dark">{{ item.name }}</p>
+                    <p class="bold"><span class="quantity">{{ item.quantity }}x</span>
+                      <span class="price bold">{{ item.price | currency }}</span>
                     </p>
-                    <p class="bold"><span class="quantity">1x</span>
-                        <span class="price bold">$156.00</span>
-                    </p>
+                  </div>
+                  <p class="price bold large dark">{{ item.total | currency }}</p>
                 </div>
-                <p class="price bold large dark">$156.00</p>
-            </div>
-            <div class="item">
-                <div>
-                    <p class="item-name bold dark">
-                        Banner Design
-                    </p>
-                    <p class="bold"><span class="quantity">1x</span>
-                        <span class="price bold">$156.00</span>
-                    </p>
-                </div>
-                <p class="price bold large dark">$156.00</p>
-            </div>
+        }
+            
         </div>
         <div class="total">
             <p>Grand Total</p>
@@ -85,5 +79,6 @@
         </div>
     </div>
     </div>
+}
 </div>
 </div>

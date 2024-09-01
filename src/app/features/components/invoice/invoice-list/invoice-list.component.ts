@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { AsyncPipe } from '@angular/common';
 import { NavBarComponent } from '../../../../shared/components/nav-bar/nav-bar.component';
 import { ListItemComponent } from '../../../../shared/components/list-item/list-item.component';
@@ -22,7 +23,7 @@ import { FilterComponent } from "../../../../shared/components/filter/filter.com
 export class InvoiceListComponent {
   invoices$: Observable<Invoice[]>; 
 
-  constructor(private store: Store<AppState>) {
+  constructor(private store: Store<AppState>, private router: Router) {
     this.invoices$ = this.store.select(selectAllInvoices);
   }
   
@@ -32,9 +33,13 @@ export class InvoiceListComponent {
   }
 
 
-  
+
+  viewInvoiceDetails(id: string): void {
+    this.router.navigate(['/invoice', id]);
+  }
 
 
 }
 
 
+ 

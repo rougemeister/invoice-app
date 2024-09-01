@@ -3,13 +3,15 @@ import { loadInvoicesSuccess, addInvoice, editInvoice, deleteInvoice } from '../
 import { Invoice } from '../../invoice/models/invoice.model';
 
 export interface InvoiceState {
+  entities: { [id: string]: Invoice; };
   invoices: Invoice[];
   selectedInvoice: Invoice | null;
 }
 
 export const initialState: InvoiceState = {
   invoices: [],
-  selectedInvoice: null
+  selectedInvoice: null,
+  entities: {}
 };
 
 export const invoiceReducer = createReducer(

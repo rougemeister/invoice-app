@@ -16,7 +16,7 @@
         </div>
         <div class="items-container">
             @for (invoice of invoices$ | async; track invoice.id) {
-                <app-list-item [item]="invoice"/>
+                <app-list-item [item]="invoice" (click)="viewInvoiceDetails(invoice.id)"/>
             }
              @empty {
 
