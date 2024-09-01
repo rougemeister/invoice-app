@@ -21,7 +21,12 @@ p {
     align-items: center;
     padding: 24px;
 }
-
+.status-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .status {
     width: 104px;
     height: 40px;
@@ -159,13 +164,17 @@ p {
     }
 }
 
-.buttons {
+.buttons-top,.buttons-bottom {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
     background-color: white;
     height: 91px;
+}
+
+.buttons-top{
+display: none;
 }
 
 button {
@@ -201,6 +210,10 @@ button {
         width: 688px;
     }
 
+    .status-wrapper {
+        width: 28%;
+    }
+
     .address {
         text-align: right;
         margin-right: 0;
@@ -208,5 +221,13 @@ button {
 
     .top, .middle {
         width: 100%;
+    }
+
+    .buttons-bottom {
+        display: none;
+    }
+    .buttons-top{
+        display: flex;
+        background-color: transparent;
     }
 }

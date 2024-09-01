@@ -9,7 +9,10 @@
     </div>
     @if(invoice$ | async; as invoice){
     <div class="status-container">
-        <p>Status</p> @if(invoice.status === 'pending'){
+        <div class="status-wrapper">
+        <p>Status</p> 
+      
+        @if(invoice.status === 'pending'){
             <div class="status pending">
                 <div class="round "></div>
                 <p class="bold">{{invoice.status[0].toUpperCase()+ invoice.status.slice(1)}}</p>
@@ -27,6 +30,12 @@
                 </div>
     
             }
+        </div>
+            <div class="buttons-top">
+                <button class="edit bold">Edit</button>
+                <button class="delete bold">Delete</button>
+                <button class="read bold">Mark as Paid</button>
+            </div>
     </div>
 
     <div class="details-container">
@@ -95,7 +104,7 @@
 }
 </div>
 </div>
-<div class="buttons">
+<div class="buttons-bottom">
     <button class="edit bold">Edit</button>
     <button class="delete bold">Delete</button>
     <button class="read bold">Mark as Paid</button>
