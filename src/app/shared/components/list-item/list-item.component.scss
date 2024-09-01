@@ -8,8 +8,12 @@
     border-radius: 8px;
     justify-content: space-between;
     box-shadow: 0 0 10px var(--grey);
+    border: 1px solid white;
 }
 
+.item:hover {
+    border: 1px solid var(--purple-dark);
+}
 
 .item:hover {
     border: 1px solid var(--purple-light);

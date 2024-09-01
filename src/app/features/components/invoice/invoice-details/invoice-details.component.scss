@@ -163,5 +163,19 @@ p {
 @media screen and (min-width: 480px) {
     .details-page {
         display: flex;
+        flex-direction: column;
+    }
+
+    .main-wrapper { 
+        width: 688px;
+    }
+
+    .address {
+        text-align: right;
+        margin-right: 0;
+    }
+
+    .top, .middle {
+        width: 100%;
     }
 }
