@@ -7,8 +7,13 @@
     flex-direction: column;
     border-radius: 8px;
     justify-content: space-between;
+    box-shadow: 0 0 10px var(--grey);
 }
 
+
+.item:hover {
+    border: 1px solid var(--purple-light);
+}
 .item-price {
     align-self: flex-end;
 
