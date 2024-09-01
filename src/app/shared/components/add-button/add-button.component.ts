@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-button',
@@ -9,4 +10,8 @@ import { Component } from '@angular/core';
 })
 export class AddButtonComponent {
 
+  constructor(private router: Router) { }
+  navigateToNewInvoiceForm() {
+    this.router.navigate(['/new-invoice']);
+  }
 }
