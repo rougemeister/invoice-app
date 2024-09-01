@@ -9,13 +9,14 @@ import { selectInvoiceById } from '../../store/selectors/invoice.selectors';
 import { AppState } from '../../../../state/app.state';
 import { AsyncPipe } from '@angular/common';
 import { CommonModule } from '@angular/common';
+import { BackButtonComponent } from '../../../../shared/components/back-button/back-button.component';
 
 
 
 @Component({
   selector: 'app-invoice-details',
   standalone: true,
-  imports: [NavBarComponent, NavBarComponent, AsyncPipe, CommonModule],
+  imports: [NavBarComponent, NavBarComponent, BackButtonComponent ,AsyncPipe, CommonModule],
   templateUrl: './invoice-details.component.html',
   styleUrl: './invoice-details.component.scss'
 })

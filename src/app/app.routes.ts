@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InvoiceListComponent } from './features/components/invoice/invoice-list/invoice-list.component';
 import { InvoiceDetailsComponent } from './features/components/invoice/invoice-details/invoice-details.component';
+import { AppComponent } from './app.component';
 
 
 export const routes: Routes = [
