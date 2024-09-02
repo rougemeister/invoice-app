@@ -7,6 +7,8 @@
     gap: 16px;
 }
 
+
+
 p {
     color: var(--dark-grey);
     line-height: 1.5;
@@ -219,4 +221,19 @@ button {
         display: flex;
         background-color: transparent;
     }
+}
+
+
+@media screen and (min-width: 860px) {
+    .details-page {
+        flex-direction: row;
+    }
+
+    .center {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+    }
+    
 }
