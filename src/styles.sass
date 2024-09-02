@@ -1,0 +1,339 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css"
+@import "primeng/resources/primeng.min.css"
+@import 'https://fonts.cdnfonts.com/css/spartan'
+$ff-spartan: "Spartan", sans-serif
+
+
+// Primary colors 
+$primary-purple: #7C5DFA
+$primary-light-purple: #9277FF
+$clr-green: #33D69F
+$clr-orange: #FF8F00
+$clr-red: #EC5757
+$clr-black: #0C0E16
+
+// Background colors
+$clr-dark:  #141625
+$clr-dark-acent-900: #1E2139 
+$clr-dark-acent-100: #373B53 
+$clr-light-green: #eafbf5
+$clr-light-orange: #fff4e5
+
+$clr-white: white
+
+// background grays
+$clr-gray-900: #F8F8FB
+$clr-gray-800: #F9FAFE
+$clr-gray-100: #373B53 //status draft bg color
+
+
+// text grays 
+$clr-gray-500: #7E88C3  // light but darker purple
+$clr-gray-400: #888EB0  // light but a little more purplish
+$clr-gray-300: #F9FAFE // lightest gray
+
+
+// FONT SIZES
+$fs-xl: 28px
+$fs-lg: 24px
+$fs-md: 16px
+$fs-base: 14px
+$fs-sm: 12px
+$fs-xs: 12px
+
+
+// COLORS FOR LIGHT THEME
+// background colors
+$bg-clr: $clr-gray-900 // main background color
+$bg-accent: $clr-white  // main background accent
+$bg-red: $clr-red
+$bg-purple: $primary-purple
+$panel-bg: $clr-dark-acent-100
+$shadow-primary: 0px 10px 20px 0px rgba(72, 84, 159, 0.25)
+$shadow-secondary: 0px 10px 10px -10px rgba(72, 84, 159, 0.10)
+
+$bg-accent-green: $clr-light-green
+$bg-accent-orange: $clr-light-orange
+$bg-accent-gray: $clr-gray-300
+$bg-white: $clr-white
+
+
+
+
+// text-colors
+$text-primary: $clr-dark
+$text-secondary: $clr-gray-400
+$text-secondary-200: $clr-gray-500
+
+
+
+body 
+    font-family: $ff-spartan
+    background-color: $bg-clr
+    color: $text-primary
+    transition: all 0.2s ease-in-out
+    padding: 0
+    margin: 0
+    font-size: $fs-base
+
+p, h1, h2, h3, h4, h5, h6
+    margin: 0
+    margin-bottom: .5rem
+
+button
+    cursor: pointer
+button, input
+  font-family: $ff-spartan
+
+// UTILITY 
+.text-secondary-200
+  color: $text-secondary-200
+.card 
+  padding: 1.2rem
+  border-radius: 10px
+  background-color: $bg-accent
+  box-shadow: $shadow-secondary
+.content-wrapper 
+  max-width: 1024px
+  margin-inline: auto
+  @media screen and (min-width: 1024px)
+    padding-inline: 3rem
+.tag
+  padding: 1rem 1.5rem
+  border-radius: 0.25rem
+  font-size: $fs-sm
+  font-weight: bold
+  border-radius: 8px
+
+
+.custom-button
+  background: none
+  border: none
+  cursor: pointer
+
+.img-fluid
+  max-width: 100%
+  height: auto
+  object-fit: cover
+
+.btn 
+  padding: 1rem 1.5rem
+  border: none
+  border-radius: 0.25rem
+  cursor: pointer
+  transition: background-color 0.3s ease
+  border-radius: 20rem
+  font-weight: 500
+  
+  &-primary 
+    background-color: $primary-purple
+    color: white
+    &:hover 
+      background-color: $primary-light-purple
+  
+  &-secondary 
+    background-color: $clr-gray-800
+    color: $text-secondary-200
+    &:hover 
+      background-color: #DFE3FA
+
+  &-tertiary 
+    background-color: #373B53
+    color: #888EB0
+    &:hover 
+      background-color: #1E2139
+
+  
+
+  &-warning
+    background-color: $bg-red
+    color: white
+    &:hover 
+      background-color: #FF9797
+
+.title
+  font-size: $fs-xl
+  font-weight: bold
+
+.subTitle 
+  font-size: $fs-lg 
+  font-weight: bold
+
+.text-lg
+  font-size: $fs-lg
+
+.text-md
+  font-size: $fs-md
+
+.text-base
+  font-size: $fs-base
+
+.text-sm
+  font-size: $fs-sm
+
+.flex
+  display: flex
+  align-items: center
+
+.flex-between
+  display: flex 
+  justify-content: space-between
+  align-items: center
+
+.flex-center
+  display: flex 
+  justify-content: center
+  align-items: center
+
+.flex-col
+  display: flex 
+  flex-direction: cloumn
+  justify-content: center
+
+.back-btn
+  width: fit-content
+  padding: .5rem .8rem
+  padding-left: .2rem
+  display: flex
+  gap: 1rem
+  font-size: $fs-base
+  font-weight: bold
+  align-items: center
+
+.error-message
+  color: $bg-red
+  font-size: $fs-sm
+  font-weight: 600
+    
+.info-message
+  color: $clr-orange
+  font-size: $fs-sm
+  font-weight: 600
+    
+// sidebar modal custom styles 
+.p-sidebar-left
+  width: 100% !important
+  padding-top: 4rem
+    
+.p-dropdown
+  width: 100% 
+  padding: .2rem
+  span
+    font-family: $ff-spartan
+
+.p-calendar
+  width: 100% 
+  input
+    padding: 1rem 
+
+.p-toast-top-right
+  z-index: 5000 !important
+  font-family: $ff-spartan !important
+
+.p-confirm-dialog 
+  font-family: $ff-spartan !important
+  width: 85%
+  
+  .p-dialog-title 
+    font-size: $fs-lg !important
+    line-height: 115% !important
+  .p-dialog-content
+    line-height: 115% !important
+
+.p-inputtext.invalid
+  border-color: red
+  border-width: 1.15px
+
+.p-inputtext:hover
+  border-color: $primary-purple
+
+.p-inputtext:focus-visible
+  border-color: $primary-purple
+  outline: $primary-purple
+  
+
+.no-scroll 
+  overflow: hidden
+
+[data-theme="dark"]
+    $bg-clr: $clr-dark // main background color
+    $bg-accent: $clr-dark-acent-900 // main background accent
+    $panel-bg: $clr-dark-acent-900
+    $bg-white: $clr-dark
+
+    // text-colors
+    $text-primary: $clr-white
+    $text-secondary: $clr-white
+    $text-secondary-200: $clr-gray-300
+
+    .filter-dropdown
+      background: $bg-accent !important
+    body 
+        font-family: $ff-spartan
+        background-color: $bg-clr
+        color: $text-primary
+
+    .invoice-card
+      background: $bg-accent !important
+      color: $text-primary !important
+      .invoice__id span, .invoice__name p
+        color: $text-primary !important
+      .invoice__date p
+        color: $text-secondary !important
+
+    .status.draft
+      color: $text-secondary-200 !important
+      .circle
+        background: $text-secondary-200 !important
+    .card
+      background: $bg-accent !important
+      .actions
+        background: $bg-accent !important
+
+    .items-list-container
+      background: #252945 !important
+    .total
+      background: $clr-black !important
+
+    .text-secondary-200, label
+      color: #DFE3FA !important
+
+    .back-btn
+      color: $text-primary !important
+
+    .p-sidebar-left , .form-actions
+      color: $text-primary !important
+      background: $clr-dark !important
+      border-color: #252945 !important
+    
+
+    input, .add-new-item button, .p-inputwrapper, .p-dropdown *
+      border-color: #252945 !important
+      background: $clr-dark-acent-900 !important
+      color: $text-primary !important
+
+    .p-dialog-footer,.p-dialog-content,.p-dialog-header 
+      background: $bg-accent !important
+      color: $text-primary !important
+    
+    
+
+@media screen and (min-width: 768px)
+  // sidebar modal custom styles 
+  .p-sidebar-left
+    width: 75% !important
+
+  .p-confirm-dialog 
+    width: 50% !important
+
+
+
+@media screen and (min-width: 1024px)
+  // sidebar modal custom styles 
+  .p-sidebar-left
+    width: 50% !important
+    padding-top: initial
+    padding-left: 6rem
+
+  .p-confirm-dialog 
+    width: 30% !important

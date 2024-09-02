@@ -1,0 +1,18 @@
+<section>
+  <div class="invoice-list">
+    @for(invoice of invoices$ | async; track invoice){
+    <app-invoice-card
+      routerLink="/invoice-detail/{{ invoice.id }}"
+      [invoice]="invoice"
+    />
+    } @empty {
+    <div class="empty-invoice flex-center">
+      <img src="assets/images/illustration-empty.svg" alt="empty-svg" />
+      <div class="content">
+        <h3 class="subTitle">There is nothing here</h3>
+        <p>Create an invoice by clicking the New button and get started</p>
+      </div>
+    </div>
+    }
+  </div>
+</section>

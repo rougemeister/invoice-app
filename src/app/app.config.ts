@@ -1,22 +1,28 @@
-import { ApplicationConfig, isDevMode } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideStore } from '@ngrx/store';
-import { provideEffects } from '@ngrx/effects';
-import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { provideHttpClient, withFetch } from '@angular/common/http';
 
 import { routes } from './app.routes';
-import { reducers } from './state/app.state';
-import { localStorageSyncReducer } from './state/app.state';
-import { InvoiceEffects } from './features/components/store/effects/invoice.effects';
+import { provideState, provideStore } from '@ngrx/store';
+import { provideHttpClient } from '@angular/common/http';
+import { provideEffects } from '@ngrx/effects';
+import { InvoicesEffects } from './store/invoices/invoices-effects/invoices.effects';
+import { invoiceReducer } from './store/invoices/invoice-reducers/invoices.reducers';
+import { themeEffect } from './store/theme/theme.effects';
+import { themeReducer } from './store/theme/theme.reducers';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConfirmationService, MessageService } from 'primeng/api';
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    provideStore(reducers, {
-      metaReducers: [localStorageSyncReducer]
-    }),
-    provideEffects(InvoiceEffects),
-    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
-    provideHttpClient(withFetch())
-  ]
+    provideEffects(InvoicesEffects),
+    importProvidersFrom(BrowserAnimationsModule),
+    provideStore(),
+    provideHttpClient(),
+    provideEffects(themeEffect),
+    provideState({ name: 'invoices', reducer: invoiceReducer }),
+    provideState({ name: 'theme', reducer: themeReducer }),
+    MessageService,
+    ConfirmationService,
+  ],
 };

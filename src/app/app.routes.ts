@@ -1,18 +1,17 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { InvoiceListComponent } from './features/components/invoice/invoice-list/invoice-list.component';
-import { InvoiceDetailsComponent } from './features/components/invoice/invoice-details/invoice-details.component';
-import { NewInvoiceFormComponent } from './features/components/invoice/new-invoice-form/new-invoice-form.component';
-
+import { Routes } from '@angular/router';
+// import { InvoiceDetailComponent } from './pages/invoice-detail/invoice-detail.component';
 
 export const routes: Routes = [
-  { path: '', component: InvoiceListComponent },
-  { path: 'invoice/:id', component: InvoiceDetailsComponent },
-  { path: 'new-invoice', component: NewInvoiceFormComponent }
+  {
+    path: '',
+    loadComponent: () =>
+      import('./pages/home/home.component').then((m) => m.HomeComponent),
+  },
+  {
+    path: 'invoice-detail/:invoiceId',
+    loadComponent: () =>
+      import('./pages/invoice-detail/invoice-detail.component').then(
+        (m) => m.InvoiceDetailComponent
+      ),
+  },
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }

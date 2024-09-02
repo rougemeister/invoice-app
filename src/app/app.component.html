@@ -1,3 +1,10 @@
-<router-outlet></router-outlet>
+<main class="content-wrapper app">
+  <!-- mainPanel -->
+  <app-main-panel />
+  <router-outlet />
 
-
+  <!-- toasts  -->
+  <p-toast
+    [breakpoints]="{ '480px': { width: '70%', right: '0', left: 'initial' },  }"
+  />
+</main>
