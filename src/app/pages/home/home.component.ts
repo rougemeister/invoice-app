@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { InvoiceListComponent } from "../../components/invoice-list/invoice-list.component";
-import { HomeHeaderComponent } from "../../components/home-header/home-header.component";
+import { HomeHeaderComponent } from '../../components/home-header/home-header.component';
 
 @Component({
   selector: 'app-home',

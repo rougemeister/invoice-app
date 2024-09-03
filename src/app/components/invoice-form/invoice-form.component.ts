@@ -212,7 +212,6 @@ export class InvoiceFormComponent implements OnInit {
 
     this.store.dispatch(addInvoice({ invoice: draftInvoice }));
     this.modalService.closeModal('newInvoice');
-    this.toastService.showSuccess('Success', 'Invoice added as draft');
   }
 
   handleCloseModal() {
