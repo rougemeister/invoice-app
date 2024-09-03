@@ -56,7 +56,6 @@ export class InvoiceDetailHeaderComponent {
       acceptButtonStyleClass: 'btn btn-warning',
       accept: () => {
         this.store.dispatch(deleteInvoice({ id }));
-        this.toastService.showSuccess("Delete Item", `Item ${id} Deleted` )
         this.router.navigate(['']);
       },
       // reject: () => {
@@ -72,11 +71,10 @@ export class InvoiceDetailHeaderComponent {
 
   markAsPaid = (id: string) => {
     this.store.dispatch(updateInvoice({ invoice: { id, status: 'paid' } }));
-    this.toastService.showSuccess('Status Updated', 'Invoice marked as paid')
   };
   markAsPending = (id: string) => {
     this.store.dispatch(updateInvoice({ invoice: { id, status: 'pending' } }));
-    this.toastService.showSuccess('Status Updated', 'Invoice marked as Pending')
+
   };
 
   openEditModal = () => {

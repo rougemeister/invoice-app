@@ -37,8 +37,8 @@ export class InvoiceDetailComponent {
 
   testInvoice = (id: string) => {
     const data = {
-      clientName: 'Kewa Blay',
-      clientEmail: 'kojokewajunior123@gmail.com',
+      clientName: 'Prince Biney',
+      clientEmail: 'rougemeister1@gmail.com',
     };
 
     this.updateInvoice(id, data);

@@ -1,7 +1,7 @@
 <header class="flex-between">
   <div class="title-container flex-column">
     <h1 class="title">Invoices</h1>
-    <!-- <p>There are {{ (invoices$ | async)?.length }} total invoices</p> -->
+    <p class="total-invoices">There are {{ total }} total invoices</p>
     <span class="total-invoices">{{ total }} total invoices </span>
   </div>
 
@@ -83,7 +83,7 @@
           fill-rule="evenodd"
         />
       </svg>
-      <span>Back</span>
+      <span>Go Back</span>
     </button>
   </ng-template>
   <app-invoice-form (closeModal)="closeNewInvoiceModal()"  />

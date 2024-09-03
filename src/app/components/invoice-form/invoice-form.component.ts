@@ -172,11 +172,11 @@ export class InvoiceFormComponent implements OnInit {
         const id = this.invoice.id;
         this.store.dispatch(updateInvoice({ invoice: { id, ...newInvoice } }));
         this.modalService.closeModal('editInvoice');
-        console.log('About to emit update success');
-        this.toastService.showSuccess(
-          'Success',
-          'Invoice updated successfully'
-        );
+        // console.log('About to emit update success');
+        // this.toastService.showSuccess(
+        //   'Success',
+        //   'Invoice updated successfully'
+        // );
       } else {
         this.store.dispatch(addInvoice({ invoice: newInvoice }));
         this.modalService.closeModal('newInvoice');

@@ -1,4 +1,4 @@
 <div class="tag status flex-center" [class]="invoice.status.toLowerCase()">
   <span class="circle"></span>
-  <span class="status">{{ invoice.status }}</span>
+  <span class="status">{{ invoice.status[0].toUpperCase() + invoice.status.slice(1) }}</span>
 </div>
